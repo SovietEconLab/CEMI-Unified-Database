@@ -1,4 +1,4 @@
-[README.txt](https://github.com/user-attachments/files/29612636/README.txt)
+[README.txt](https://github.com/user-attachments/files/29613899/README.txt)
 CEMI Career Database — Reproduction Guide
 
 This guide accompanies the Data Descriptor A unified database of the Soviet CEMI,
@@ -23,17 +23,14 @@ the three frozen Excel inputs alone and needs no API key.
 0. What is in the deposit
 
 The deposit is organised into numbered stage folders (01–05) plus a set of
-root-level files (the built artefacts, codebooks, glossaries, and this README).
-The builder scripts and the three Excel inputs live inside folder 05., not at the
+root-level files (the codebooks, glossaries, and this README).
+The builder scripts, the three Excel inputs, and the prebuilt artefacts
+(cemi_career.db, cemi_career_ui.html) live inside folder 05., not at the
 repository root — see Part B §B.1 for the working-directory rules this implies.
 
     CEMI-Unified-Database/
     │
     ├─ README.md · README.txt · README.docx        # this guide (three formats)
-    │
-    ├─ cemi_career.db              # BUILT artefact — SQLite, LEAN build
-    │                              #   (41 tables · 55,711 rows · ~5.4 MB · sheets_index = 181)
-    ├─ cemi_career_ui.html         # BUILT artefact — self-contained interface (~7.3 MB)
     │
     ├─ CEMI_Codebook_v1_EN.pdf / .docx                          # variable codebook
     ├─ CEMI_Institution_Classification_Codebook_v1_EN.pdf / .docx   # institution 4-sector codebook
@@ -53,14 +50,17 @@ repository root — see Part B §B.1 for the working-directory rules this implie
     ├─ 03. OCR Results/                  # 25 Stage-B1 Russian OCR workbooks (frozen)
     ├─ 04. English Translation Results/   # 25 Stage-B4 English-translation workbooks (frozen)
     │                                    #   (+ 3 auxiliary glossary workbooks; the builder also accepts the legacy spelling "Tranlation")
-    └─ 05. Unified Data and Database Construction Code/   # Part-B code + the three frozen Excel inputs
+    └─ 05. Unified Data and Database Construction Code/   # Part-B code + the three frozen Excel inputs + prebuilt artefacts
        ├─ cemi_career_db.py             #   deterministic DB builder
        ├─ cemi_career_ui.py            #   static-interface generator
        ├─ data.xlsx                     #   Track B input — personnel roster (12,211 × 27)
        ├─ cemi_translation_db.xlsx      #   Track A input — annual cross-tabulations + glossary + sheets-index
-       └─ research_field_subfield.xlsx  #   Track A input — 22 yearly research-subfield snapshots
+       ├─ research_field_subfield.xlsx  #   Track A input — 22 yearly research-subfield snapshots
+       ├─ cemi_career.db                #   BUILT artefact — SQLite, LEAN build
+       │                                #     (41 tables · 55,711 rows · ~5.4 MB · sheets_index = 181)
+       └─ cemi_career_ui.html           #   BUILT artefact — self-contained interface (~7.3 MB)
 
-  Two build tiers. The prebuilt cemi_career.db shipped at the repository root is the
+  Two build tiers. The prebuilt cemi_career.db shipped inside folder 05. is the
   lean build (55,711 rows · 181 sheets_index rows · 636 classified institutions),
   produced by running the builder inside folder 05. with no extra files co-located.
   Reproducing the full-fidelity build documented in the codebook (56,931 rows · 757
@@ -234,14 +234,14 @@ the location of data.xlsx and, relative to that base directory, it looks for:
 
 Whatever it finds beside data.xlsx determines which of the two build tiers you get.
 
-Tier 1 — Lean build (matches the prebuilt root cemi_career.db)
+Tier 1 — Lean build (matches the prebuilt cemi_career.db in folder 05.)
 
     cd "05. Unified Data and Database Construction Code"
     python cemi_career_db.py
 
 With only the three Excel inputs present, glossary enrichment and OCR/translation
 provenance are skipped. Result: 55,711 rows · 181 sheets_index rows · 636 classified
-institutions — identical to the prebuilt cemi_career.db at the repository root.
+institutions — identical to the prebuilt cemi_career.db shipped in folder 05.
 
 Tier 2 — Full-fidelity build (the counts documented in the codebook: 56,931 rows)
 
@@ -273,7 +273,7 @@ Summary of the two tiers:
   ------------------------------------------------------------------------------------------------------------------------------------------------------
   Build                                                      Total rows   sheets_index   classified institutions   person      person_year_observation
   ---------------------------------------------------------- ------------ -------------- ------------------------- ----------- -------------------------
-  Lean (prebuilt root DB / folder-05-only)                   55,711       181            636                       1,954       12,211
+  Lean (prebuilt DB / folder-05-only)                        55,711       181            636                       1,954       12,211
 
   Full-fidelity (glossary + provenance folders co-located)   56,931       757            652                       1,954       12,211
   ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -372,7 +372,7 @@ should return ok / no rows.
 SHA-256. The lean and full-fidelity builds are different files with different
 hashes; each is bit-identical across repeated runs on the same inputs. When comparing
 shasum -a 256 cemi_career.db against a published Zenodo checksum, confirm which build
-tier that release corresponds to (the root prebuilt DB is the lean build).
+tier that release corresponds to (the prebuilt DB shipped in folder 05. is the lean build).
 
 ------------------------------------------------------------------------
 
