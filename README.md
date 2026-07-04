@@ -1,4 +1,4 @@
-[README.txt](https://github.com/user-attachments/files/29613899/README.txt)
+[README.txt](https://github.com/user-attachments/files/29657712/README.txt)
 CEMI Career Database — Reproduction Guide
 
 This guide accompanies the Data Descriptor A unified database of the Soviet CEMI,
@@ -385,8 +385,3 @@ All code is hosted at https://github.com/SovietEconLab/CEMI-Unified-Database, wi
 each tagged release mirrored to Zenodo under a concept DOI plus a release-specific
 version DOI. When citing the dataset, cite both this Data Descriptor and the
 version-specific Zenodo DOI of the release you ran.
-
-  Note. Machine-readable CITATION.cff and codemeta.json files are not yet
-  present in the current commit. They are planned for the first tagged release so that
-  GitHub, Zenodo, and Zotero can harvest citations automatically; until then, cite the
-  Data Descriptor and the Zenodo DOI directly.
