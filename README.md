@@ -1,4 +1,4 @@
-[README.txt](https://github.com/user-attachments/files/29788945/README.txt)
+[README.txt](https://github.com/user-attachments/files/29789692/README.txt)
 CEMI Career Database — Reproduction Guide
 
 This guide accompanies the Data Descriptor A unified database of the Soviet Central
@@ -377,18 +377,19 @@ tier that release corresponds to (the prebuilt DB shipped in folder 05. is the l
 
 License and citation
 
--   Data: CC-BY 4.0 (the SQLite file and all Excel inputs).
--   Code: MIT License (everything in this repository).
+-   Everything in this repository - the data (the SQLite database and all
+    Excel inputs) and the code (all Python scripts) - is released under the
+    Creative Commons Attribution 4.0 International licence (CC BY 4.0):
+    https://creativecommons.org/licenses/by/4.0/legalcode
 
 All code is hosted at https://github.com/SovietEconLab/CEMI-Unified-Database, with
 each tagged release mirrored to Zenodo under the concept DOI
-https://doi.org/10.5281/zenodo.21254566 (resolves to the latest version); the
-version DOI of the current release (v1.0.0, tag CEMIDBv1) is
-https://doi.org/10.5281/zenodo.21254567. When citing the dataset, cite both the
+https://doi.org/10.5281/zenodo.21254566 (always resolves to the latest version)
+plus a release-specific version DOI. When citing the dataset, cite both the
 Data Descriptor and the version-specific Zenodo DOI of the release you ran.
 
 Dataset citation:
 
   Kim, D., Hwang, C. & Kim, S. A unified database of the Soviet Central Economic
   Mathematical Institute, 1961-1987. Zenodo
-  https://doi.org/10.5281/zenodo.21254567 (2026).
+  https://doi.org/10.5281/zenodo.21254566 (2026).
