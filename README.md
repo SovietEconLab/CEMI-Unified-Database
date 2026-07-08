@@ -383,8 +383,8 @@ License and citation
 -   Code: MIT License (everything in this repository).
 
 All code is hosted at https://github.com/SovietEconLab/CEMI-Unified-Database, with
-each tagged release mirrored to Zenodo under the concept DOI
-https://doi.org/10.5281/zenodo.21254567 plus a release-specific version DOI.
+each tagged release mirrored to Zenodo under the DOI
+https://doi.org/10.5281/zenodo.21254567.
 When citing the dataset, cite both the Data Descriptor and the version-specific
 Zenodo DOI of the release you ran.
 
