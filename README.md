@@ -1,5 +1,4 @@
-https://doi.org/10.5281/zenodo.21254567
-[README.txt](https://github.com/user-attachments/files/29787752/README.txt)
+[README.txt](https://github.com/user-attachments/files/29788945/README.txt)
 CEMI Career Database — Reproduction Guide
 
 This guide accompanies the Data Descriptor A unified database of the Soviet Central
@@ -38,7 +37,6 @@ repository root — see Part B §B.1 for the working-directory rules this implie
     │
     ├─ institution glossary (Nolting 4-sector classified, all sheets, classified).xlsx  # 4-sector coding
     ├─ institution glossary (Nolting 4-sector classified, all sheets, unified).xlsx
-    ├─ glossary(0530).xlsx
     ├─ ARAN F 1959 Op 1 CEMI original document lists.xlsx
     │
     ├─ 01. Raw Materials(Sample)/        # sample ARAN PDF scans (1959 1 *.pdf) + copies of the Part-A scripts
@@ -383,10 +381,11 @@ License and citation
 -   Code: MIT License (everything in this repository).
 
 All code is hosted at https://github.com/SovietEconLab/CEMI-Unified-Database, with
-each tagged release mirrored to Zenodo under the DOI
-https://doi.org/10.5281/zenodo.21254567.
-When citing the dataset, cite both the Data Descriptor and the version-specific
-Zenodo DOI of the release you ran.
+each tagged release mirrored to Zenodo under the concept DOI
+https://doi.org/10.5281/zenodo.21254566 (resolves to the latest version); the
+version DOI of the current release (v1.0.0, tag CEMIDBv1) is
+https://doi.org/10.5281/zenodo.21254567. When citing the dataset, cite both the
+Data Descriptor and the version-specific Zenodo DOI of the release you ran.
 
 Dataset citation:
 
