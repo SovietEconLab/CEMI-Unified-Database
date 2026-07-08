@@ -1,8 +1,8 @@
-[README.md](https://github.com/user-attachments/files/29790256/README.md)
+[README.md](https://github.com/user-attachments/files/29792055/README.md)
 # CEMI Career Database — Reproduction Guide
 
-This guide accompanies the Data Descriptor *A unified database of the Soviet Central
-Economic Mathematical Institute, 1961–1987*. It lets **anyone reproduce the resource end-to-end**: **(A)** re-run the
+This guide accompanies the Data Descriptor *A Unified Database of the Central Economic
+Mathematical Institute of the USSR Academy of Sciences, 1961–1987*. It lets **anyone reproduce the resource end-to-end**: **(A)** re-run the
 OCR + translation of the original ARAN archival scans, and **(B)** rebuild, from three
 frozen Excel inputs, the unified SQLite database **`cemi_career.db`** and its
 self-contained static interface **`cemi_career_ui.html`**.
@@ -38,7 +38,6 @@ CEMI-Unified-Database/
 │
 ├─ institution glossary (Nolting 4-sector classified, all sheets, classified).xlsx  # 4-sector coding
 ├─ institution glossary (Nolting 4-sector classified, all sheets, unified).xlsx
-├─ glossary(0530).xlsx
 ├─ ARAN F 1959 Op 1 CEMI original document lists.xlsx
 │
 ├─ 01. Raw Materials(Sample)/        # sample ARAN PDF scans (1959 1 *.pdf) + copies of the Part-A scripts
@@ -50,7 +49,7 @@ CEMI-Unified-Database/
 │  └─ README_translate.md
 ├─ 03. OCR Results/                  # 25 Stage-B1 Russian OCR workbooks (frozen)
 ├─ 04. English Translation Results/   # 25 Stage-B4 English-translation workbooks (frozen)
-│                                    #   (+ 3 auxiliary glossary workbooks; the builder also accepts the legacy spelling "Tranlation")
+│                                    #   (+ 3 auxiliary glossary workbooks + glossary(0530).xlsx; the builder also accepts the legacy spelling "Tranlation")
 └─ 05. Unified Data and Database Construction Code/   # Part-B code + the three frozen Excel inputs + prebuilt artefacts
    ├─ cemi_career_db.py             #   deterministic DB builder
    ├─ cemi_career_ui.py            #   static-interface generator
